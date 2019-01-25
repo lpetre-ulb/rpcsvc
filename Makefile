@@ -38,7 +38,7 @@ endif
 build: $(APP)
 
 $(APP): $(APP_OBJS)
-	$(CXX) $(LDFLAGS) -o $@ -rdynamic $(APP_OBJS) $(LDLIBS) -lmemsvc -ldl -l:libz.so.1 -lrt $(patsubst -lz,-l:libz.so.1,$(shell pkg-config --libs protobuf-lite))
+	$(CXX) $(LDFLAGS) -o $@ -rdynamic $(APP_OBJS) $(LDLIBS) -ldl -l:libz.so.1 -lrt $(patsubst -lz,-l:libz.so.1,$(shell pkg-config --libs protobuf-lite))
 
 clean:
 	chmod -fR u+w *.elf *.gdb *.o *.so modules/*.so packages/ proto_cpp/ || true

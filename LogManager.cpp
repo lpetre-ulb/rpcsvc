@@ -8,7 +8,6 @@
 #include <string>
 #include <sys/mman.h>
 
-#include <libmemsvc.h>
 #include "LogManager.h"
 
 LogManager *LOGGER = NULL;
