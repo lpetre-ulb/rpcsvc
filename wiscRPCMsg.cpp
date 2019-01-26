@@ -1,5 +1,5 @@
 #include "wiscRPCMsg.h"
-#include "proto_cpp/rpcmsg.pb.h"
+#include "rpcmsg.pb.h"
 #include <string.h>
 #include <arpa/inet.h>
 
