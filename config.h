@@ -1,13 +1,13 @@
-#undef	NODAEMON
+#define NODAEMON
 
 #define MAX_CLIENTS 50
 #define IP_ACL_PATH "/mnt/persistent/config/rpcsvc.acl"
 
 #define MODULES_DIR "/mnt/persistent/rpcmodules"
 
-#define LOG_PATH_FORMAT "syslog"
-// #define LOG_PATH_FORMAT "/var/log/rpcsvc/rpcsvc.%s.%u.log"
-#define LOG_OUTPUT_LEVEL LogManager::INFO
+//#define LOG_PATH_FORMAT "syslog"
+#define LOG_PATH_FORMAT "/mnt/persistent/rpcsvc/log/rpcsvc.%s.%u.log"
+#define LOG_OUTPUT_LEVEL LogManager::DEBUG
 
 /* 8 megabyte max message.
  * The Zynq only has so much RAM, and we serve many clients.
