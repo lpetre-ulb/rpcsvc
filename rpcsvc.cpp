@@ -1,3 +1,5 @@
+#include "config.h"
+
 #include <stdio.h>
 #include <signal.h>
 #include <stdlib.h>
@@ -15,14 +17,11 @@
 
 #include "LogManager.h"
 
-#define MAX_CLIENTS 50
-
-#define IP_ACL_PATH "/mnt/persistent/config/rpcsvc.acl"
-
-#undef	NODAEMON
-
-//#define dprintf(...) printf(__VA_ARGS__)
-#define dprintf(...)
+#ifdef NODAEMON
+    #define dprintf(...) printf(__VA_ARGS__)
+#else
+    #define dprintf(...)
+#endif
 
 int run_client(int clientfd); // run_client.cpp
 
